@@ -309,7 +309,7 @@ ul li{
 }
 .about-text p {
   line-height: 1.6;
-  color: white;
+  color: black;
   font-size: 1rem;
 }
 #navLinks{
@@ -727,4 +727,7 @@ margin:unset
       
    padding: 160px 20px; 
   }
+  .header a {
+   margin-left: unset;
+}
 }
