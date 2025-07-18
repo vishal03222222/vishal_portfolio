@@ -11,7 +11,12 @@
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
       navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
+      nav.classList.toggle('active');
       
+    }
+    function closeMenu() {
+      const nav = document.getElementById('navLinks1');
+      nav.classList.remove('active');
     }
 
       function sendMessage() {
@@ -74,13 +79,13 @@
     
     <!-- <a class="menu-toggle" onclick="toggleMenu()" style="display: block; font-size: 30px; cursor: pointer;">☰</a> -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks1">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
+    <div class="nav-links"  id="navLinks1">
+      <a href="#about" onclick="closeMenu()">About</a><br>
+      <a href="#skills" onclick="closeMenu()">Skills</a><br>
+      <a href="#portfolio" onclick="closeMenu()">Projects</a>
+      <a href="#experience" onclick="closeMenu()">Experience</a>
+      <a href="#education" onclick="closeMenu()">Education</a>
+      <a href="#certifications" onclick="closeMenu()">Certifications</a>
       <a href="#contact">Contact</a>
     </div>
   

@@ -1,4 +1,11 @@
 
+.nav-links {
+  display: none;
+}
+
+.nav-links.active {
+  display: block;
+}
 
 body {
   margin: 0;
