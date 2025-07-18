@@ -1,11 +1,5 @@
 
-.nav-links {
-  display: none;
-}
 
-.nav-links.active {
-  display: block;
-}
 
 body {
   margin: 0;
@@ -670,6 +664,7 @@ display:none
     display: none;
     flex-direction: column;
     margin-top: 10px;
+    flex-direction: column;
     
   }
 
@@ -726,14 +721,19 @@ display:none
   max-width: 400px;
   margin:unset;
   tex-color: white;
+  padding: 202px 20px
 }
 .about h2{
 margin:unset
 }
   .container {
       
-   padding: 160px 20px; 
+   padding: 200px 20px; 
   }
+  .about {
+    padding: 247px 30px;
+    /* margin-top: 250px; */
+}
   .header a {
    margin-left: unset;
 }
