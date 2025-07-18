@@ -13,6 +13,37 @@
       navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
       
     }
+
+      function sendMessage() {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+    
+        if (!name || !email || !message) {
+          alert("Please fill out all fields.");
+          return;
+        }
+    
+        const contactData = {
+          name,
+          email,
+          message,
+          submittedAt: new Date().toLocaleString()
+        };
+    
+        let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+        contacts.push(contactData);
+        localStorage.setItem('contacts', JSON.stringify(contacts));
+    
+        alert("Message saved!");
+        
+        // Optional: clear form
+        document.querySelector('#name').value = "";
+        document.querySelector('#email').value = "";
+        document.querySelector('#message').value = "";
+      }
+   
+    
   </script>
 </head>
 <body>
@@ -207,10 +238,10 @@
     <div class="container">
       <u><h2 class="section-title">Contact Me:</h2></u>
       <form class="animate">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
+        <input id="name" type="text" placeholder="Your Name" required />
+        <input id="email" type="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn" onclick="sendMessage()">Send Message</button>
       </form>
     </div>
   </section>
