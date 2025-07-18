@@ -10,15 +10,13 @@
   <script>
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
-      navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
-      
-    }
-    function tooglesidebar(){
-        const navLinks = document.getElementById("navLinks");
-      navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
-      
+      navLinks.style.display = navLinks.style.display === "block" ? "none" : "grid";
+    
 
+
+      
     }
+   
 
       function sendMessage() {
         const name = document.getElementById('name').value.trim();
@@ -54,11 +52,13 @@
 </head>
 <body>
   <header class="header">
+    
     <div class="container nav-container">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div> 
       <a href="https://github.com/vishal03222222"><img src="gitub.svg" alt=""></a><span style="margin-top:10px;color: black;">GitHub</span>
   <a href="https://www.linkedin.com/in/m-g-vishal-462b4223a/" ><img src="linkdiin.png" alt="" style=" margin-top:10px;object-fit: fill;width:min-content;margin-left:20px"></a><span style="color: black;">Linkdin</span>
   <nav class="navbar" style=" font-family: Arial, sans-serif;">
-    <a href="vishal_resume_2025.pdf" target="_blank"
+    <a href="vishal_resume_2025.pdf" target="_blank" class="resume"
       style="
       object-fit: fill;margin-left:20px;
       
@@ -79,27 +79,31 @@
     </a>
     
     <!-- <a class="menu-toggle" onclick="toggleMenu()" style="display: block; font-size: 30px; cursor: pointer;">☰</a> -->
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks1">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </div>
+    
+
+ 
+  <div class="nav-links" style="background:#007BFF"id="navLinks1">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+
   
-    <div class="nav-links2 toogle"  style="display:none" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-links2 toogle" style="display:none"  id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li> <a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Conatact</a></li>
+     
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div> 
+
   </nav>
     </div>
   </header>
@@ -242,7 +246,7 @@
 
   <section class="contact section-animate zoom-in" id="contact">
     <div class="container">
-      <u><h2 class="section-title">Contact Me:</h2></u>
+      <u><h2 class="section-title" action="https://formsubmit.co/mgvishalctr@gmail.com" method="POST">Contact Me:</h2></u>
       <form class="animate">
         <input id="name" type="text" placeholder="Your Name" required />
         <input id="email" type="email" placeholder="Your Email" required />
