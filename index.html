@@ -19,36 +19,35 @@
    
 
       function sendMessage() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-    
-        if (!name || !email || !message) {
-          alert("Please fill out all fields.");
-          return;
+        let params ={
+         name : document.getElementById('name').value.trim(),
+         email : document.getElementById('email').value.trim(),
+         message : document.getElementById('message').value.trim(),
+         phone : document.getElementById('phno').value.trim(),
+
         }
+       
     
-        const contactData = {
-          name,
-          email,
-          message,
-          submittedAt: new Date().toLocaleString()
-        };
-    
-        let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
-        contacts.push(contactData);
-        localStorage.setItem('contacts', JSON.stringify(contacts));
-    
-        alert("Message saved!");
-        
-        // Optional: clear form
+        emailjs.send("service_2ho1i38","template_o0at6mq",params).then(alert("Email send succesfully"))
+      
         document.querySelector('#name').value = "";
         document.querySelector('#email').value = "";
         document.querySelector('#message').value = "";
+        document.querySelector("#phno").value="";
       }
    
     
   </script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "67G6zZK2vhq2K5sWP",
+      });
+   })();
+</script>
 </head>
 <body>
   <header class="header">
@@ -251,7 +250,10 @@
       <form class="animate">
         <input id="name" type="text" placeholder="Your Name" required />
         <input id="email" type="email" placeholder="Your Email" required />
+        <input id="phno" type="number" placeholder="Your contact number" required />
+
         <textarea id="message" placeholder="Your Message" required></textarea>
+
         <button type="submit" class="btn" onclick="sendMessage()">Send Message</button>
       </form>
     </div>
