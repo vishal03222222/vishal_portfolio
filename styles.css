@@ -66,6 +66,7 @@ body {
   color:rgb(250, 245, 245);
   font-weight: 500;
   padding:8px;
+ 
   transition: color 0.3s ease;
   
 }
@@ -366,6 +367,10 @@ ul li{
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+.header a {
+  margin-left: unset;
+  width: -webkit-fill-available;
+}
 }
  .menu-toggle {
       font-size: 30px;
@@ -453,7 +458,12 @@ ul li{
   .hero-image .profile-pic {
     width: 200px;
     height: 200px;
+
   }
+  .header a {
+    margin-left: unset;
+    width: -webkit-fill-available;
+ }
 }
 
 .animate-text {
@@ -652,6 +662,7 @@ display:none
 
 
 @media (max-width:765px){
+
   .container {
     max-width: 1100px;
     margin: auto;
@@ -661,7 +672,8 @@ display:none
     margin:0px
   }
   .header a{
-    margin-left:30px
+    margin-left:30px;
+    width: -webkit-fill-available;
   }
   .hero-image .profile-pic {
     width: 200px;
@@ -838,6 +850,8 @@ margin:unset
 }
   .header a {
    margin-left: unset;
+   width: -webkit-fill-available;
 }
+
 }
 
