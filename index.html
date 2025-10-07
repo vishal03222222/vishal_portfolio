@@ -10,10 +10,14 @@
   <script>
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
-      navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
+      navLinks.style.display = navLinks.style.display === "block" ? "none" : "grid";
+    
+
+
       
     }
    
+<<<<<<< HEAD
       function sendMessage() {
         const name = document.querySelector('#name').value.trim();
         const email = document.querySelector('#email').value.trim();
@@ -41,18 +45,49 @@
         document.querySelector('#name').value = "";
         document.querySelector('#email').value = "";
         document.querySelector('#message').value = "";
+=======
+
+      function sendMessage() {
+        let params ={
+         name : document.getElementById('name').value.trim(),
+         email : document.getElementById('email').value.trim(),
+         message : document.getElementById('message').value.trim(),
+         phone : document.getElementById('phno').value.trim(),
+
+        }
+       
+    
+        emailjs.send("service_2ho1i38","template_o0at6mq",params).then(alert("Email send succesfully"))
+      
+        document.querySelector('#name').value = "";
+        document.querySelector('#email').value = "";
+        document.querySelector('#message').value = "";
+        document.querySelector("#phno").value="";
+>>>>>>> a71780df77f05b3b849540b3cb959307668b277e
       }
    
     
   </script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "67G6zZK2vhq2K5sWP",
+      });
+   })();
+</script>
 </head>
 <body>
   <header class="header">
+    
     <div class="container nav-container">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div> 
       <a href="https://github.com/vishal03222222"><img src="gitub.svg" alt=""></a><span style="margin-top:10px;color: black;">GitHub</span>
   <a href="https://www.linkedin.com/in/m-g-vishal-462b4223a/" ><img src="linkdiin.png" alt="" style=" margin-top:10px;object-fit: fill;width:min-content;margin-left:20px"></a><span style="color: black;">Linkdin</span>
   <nav class="navbar" style=" font-family: Arial, sans-serif;">
-    <a href="vishal_resume_2025.pdf" target="_blank"
+    <a href="vishal_resume_2025.pdf" target="_blank" class="resume"
       style="
       object-fit: fill;margin-left:20px;
       
@@ -62,6 +97,7 @@
         text-decoration: none;
         border-radius: 5px;
         font-size: 16px;
+        width:unset;
         margin-top: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: background-color 0.3s ease;
@@ -72,28 +108,33 @@
       📄 Download Resume
     </a>
     
-    <!-- <a class="menu-toggle" onclick="toggleMenu()" style="display: block; font-size: 30px; cursor: pointer;">☰</a> -->
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks1">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </div>
+    
+ 
+  <div class="nav-links" id="navLinks1">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+
   
-    <div class="nav-links2 toogle"  style="display:none" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-links2 toogle" style="display:none;    margin: auto;
+    margin-top: 10px;"  id="navLinks">
+     <div class="listbuttons">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li> <a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Conatact</a></li>
+     </div>
+     
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div> 
+
   </nav>
     </div>
   </header>
@@ -235,12 +276,24 @@
   <b> <hr style="border-color: rgb(250, 247, 247);margin:100px;"></b>
 
   <section class="contact section-animate zoom-in" id="contact">
+<<<<<<< HEAD
     <div class="container" >
       <u><h2 class="section-title">Contact Me:</h2></u>
       <form class="animate">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" required></textarea>
+=======
+    <div class="container">
+      <u><h2 class="section-title" action="https://formsubmit.co/mgvishalctr@gmail.com" method="POST">Contact Me:</h2></u>
+      <form class="animate">
+        <input id="name" type="text" placeholder="Your Name" required />
+        <input id="email" type="email" placeholder="Your Email" required />
+        <input id="phno" type="number" placeholder="Your contact number" required />
+
+        <textarea id="message" placeholder="Your Message" required></textarea>
+
+>>>>>>> a71780df77f05b3b849540b3cb959307668b277e
         <button type="submit" class="btn" onclick="sendMessage()">Send Message</button>
       </form>
     </div>

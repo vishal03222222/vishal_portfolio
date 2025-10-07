@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+    input, textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Contact Form</h2>
+
+  <form class="animate" id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+  <h3>Saved Messages:</h3>
+<div id="savedMessages"></div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from refreshing the page
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const contactData = {
+        name: name,
+        email: email,
+        message: message,
+        submittedAt: new Date().toLocaleString()
+      };
+
+   
+      let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+      contacts.push(contactData);
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+
+      alert("Message saved successfully!");
+
+      // Optional: Clear form
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
