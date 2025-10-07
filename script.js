@@ -11,5 +11,5 @@ const observer = new IntersectionObserver((entries) => {
     navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
   }
 
-  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
-  
+
+
